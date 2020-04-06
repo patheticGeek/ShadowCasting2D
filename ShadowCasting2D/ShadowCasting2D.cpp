@@ -223,6 +223,14 @@ public:
 					FillRect(x * fBlockWidth, y * fBlockWidth, fBlockWidth, fBlockWidth, olc::BLUE);
 			}
 
+		// Draw Edges from PolyMap
+		for (auto& e : vecEdges)
+		{
+			DrawLine(e.sx, e.sy, e.ex, e.ey);
+			FillCircle(e.sx, e.sy, 3, olc::RED);
+			FillCircle(e.ex, e.ey, 3, olc::RED);
+		}
+
 		return true;
 	}
 };
